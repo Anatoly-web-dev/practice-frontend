@@ -1,0 +1,340 @@
+/* ==================================== beauty-buttons =======================================*/
+
+/* ----- Кнопка-волна ----- */
+.beauty-buttons__content {
+	display: grid;
+	grid-template-columns: repeat(3, auto);
+	gap: 50px;
+	justify-content: center;
+	background-color: rgb(79, 71, 71);
+	padding: 50px;
+}
+
+.beauty-buttons__wrapper {
+	max-width: 600px;
+	margin: 0 auto 30px;
+	display: flex;
+	column-gap: 40px;
+	row-gap: 59px;
+	justify-content: center;
+	align-items: center;
+	color: white;
+}
+
+.btn-wave {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 280px;
+	height: 60px;
+	overflow: hidden;
+
+	position: relative;
+	transition: all 0.8s linear 0s;
+
+	border-radius: 0 0 10px 10px;
+	text-align: center;
+}
+
+.btn-wave__text {
+	color: white;
+	text-transform: uppercase;
+	letter-spacing: 5px;
+	font-family: Arial, Helvetica, sans-serif;
+	position: relative;
+	z-index: 1;
+}
+
+.btn-wave__waves {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 280px;
+	height: 280px;
+	background-color: #4973ff;
+	box-shadow: inset 0 0 50px rgba(0, 0, 0, 0.5);
+	transition: all 0.8s linear 0s;
+}
+
+.btn-wave:hover {
+	border-radius: 10px;
+	transition: all 0.8s linear 0.2s;
+	box-shadow: 0 0 40px rgba(73, 115, 255, 0.6);
+	cursor: pointer;
+}
+
+.btn-wave:hover .btn-wave__waves {
+	top: -50px;
+}
+
+.btn-wave__waves::before,
+.btn-wave__waves::after {
+	content: "";
+	position: absolute;
+	top: 0;
+	left: 50%;
+	width: 250%;
+	height: 250%;
+	transform: translate3d(-50%, -96%, 0) rotate(0deg) scale(1);
+}
+
+.btn-wave__waves::before {
+	background-color: #000000;
+	border-radius: 48%;
+	animation: waves 5s infinite linear;
+}
+
+.btn-wave__waves::after {
+	background-color: rgba(0, 0, 0, 0.5);
+	border-radius: 44%;
+	animation: waves 10s infinite linear;
+}
+
+@keyframes waves {
+	0% {
+		transform: translate3d(-50%, -96%, 0) rotate(0deg) scale(1);
+	}
+
+	100% {
+		transform: translate3d(-50%, -96%, 0) rotate(360deg) scale(1);
+	}
+}
+
+/* кнопка-градиент*/
+
+.gradient-button {
+	display: inline-block;
+	padding: 20px 30px;
+	border-radius: 10px;
+	font-family: Arial, Helvetica, sans-serif;
+	text-transform: uppercase;
+	letter-spacing: 2px;
+	background-image: linear-gradient(to right, #9EEFE1 0%, #4830F0 51%, #9EEFE1 100%);
+	background-size: 200% auto;
+	box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+	transition: 0.5s;
+	font-size: 13px;
+}
+
+.gradient-button:hover {
+	background-position: right center;
+}
+
+/* кнопка с рамкой*/
+
+.border-button {
+	position: relative;
+	background-color: #c66dce;
+	padding: 18px 40px;
+	box-shadow: inset 0 0 0 2px rgb(168, 168, 168);
+	transition: 0.15s linear 0s;
+	font-size: 13px;
+	text-transform: uppercase;
+	letter-spacing: 2px;
+	font-family: Arial, Helvetica, sans-serif;
+}
+
+.border-button:hover {
+	background-color: #a95cb0;
+	transition: 0.3s linear 0s;
+}
+
+.border-button__pseudo {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+
+.border-button::before,
+.border-button::after,
+.border-button__pseudo::before,
+.border-button__pseudo::after {
+	content: "";
+	position: absolute;
+	width: 0;
+	height: 0;
+	background-color: #f1f3f2;
+}
+
+.border-button::before {
+	bottom: 0;
+	left: 0;
+	transition: 0.15s linear 0.45s;
+}
+
+.border-button:hover::before {
+	height: 100%;
+	width: 2px;
+	transition: 0.2s linear;
+}
+
+.border-button::after {
+	top: 0;
+	left: 0;
+	transition: 0.15s linear 0.3s;
+}
+
+.border-button:hover::after {
+	height: 2px;
+	width: 100%;
+	transition: 0.2s linear 0.2s;
+}
+
+.border-button__pseudo::before {
+	top: 0;
+	right: 0;
+	transition: 0.15s linear 0.15s;
+}
+
+.border-button__pseudo:hover::before {
+	height: 100%;
+	width: 2px;
+	transition: 0.2s linear 0.4s;
+}
+
+.border-button__pseudo::after {
+	bottom: 0;
+	right: 0;
+	transition: 0.15s linear;
+}
+
+.border-button__pseudo:hover::after {
+	height: 2px;
+	width: 100%;
+	transition: 0.2s linear 0.6s;
+}
+
+/* кнопка с анимацией слайдер*/
+
+.sliding-button {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	position: relative;
+	border: 1px solid;
+	border-image: linear-gradient(180deg, #ff3000, #ed0200, #ff096c, #d50082);
+	border-image-slice: 1;
+	background-color: #1D1B26;
+	overflow: hidden;
+	transition: 0.8s ease-in;
+}
+
+.sliding-button:hover {
+	background-color: rgba(177, 172, 198, 0.8);
+}
+
+.sliding-button__text {
+	position: relative;
+	z-index: 1;
+	padding: 15px 40px;
+	letter-spacing: 2px;
+	font-size: 13px;
+	text-transform: uppercase;
+}
+
+.sliding-button:before {
+	content: "";
+	position: absolute;
+	left: 0;
+	top: 0;
+	height: 0;
+	width: 100%;
+	color: white;
+	background: linear-gradient(180deg, #ff3000, #ed0200, #ff096c, #d50082);
+	transition: .5s linear;
+}
+
+.sliding-button:hover:before {
+	bottom: 0%;
+	top: auto;
+	height: 100%;
+}
+
+/* кнопка с подсветкой*/
+
+.glow-button {
+	display: inline-block;
+	padding: 15px 30px;
+	border-radius: 10px;
+	box-shadow: 0 0 40px 40px #F137A6 inset, 0 0 0 0 #F137A6;
+	letter-spacing: 2px;
+	transition: 0.3s ease-in-out;
+	text-transform: uppercase;
+	font-size: 13px;
+}
+
+.glow-button:hover {
+	box-shadow: 0 0 10px 0 #F137A6 inset, 0 0 10px 4px #F137A6;
+	color: #F137A6;
+	transition: 0.15s linear;
+	background-color: #A4DADA;
+}
+
+/* кнопка со стрелкой*/
+
+.btn-wrapper {
+	color: #2fc989;
+}
+
+.arrow-button {
+	position: relative;
+	border: 4px solid #2fc989;
+	padding: 12px 30px;
+	background-color: #f6f6f6;
+	transition: 0.3s linear;
+}
+
+.arrow-button__text {
+	text-transform: uppercase;
+	letter-spacing: 2px;
+	font-weight: 700;
+	position: relative;
+	z-index: 3;
+	font-size: 13px;
+}
+
+.arrow-button:hover {
+	transition: 0.5s linear;
+	color: #f6f6f6;
+}
+
+.arrow-button::before {
+	content: "";
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 0;
+	height: 100%;
+	visibility: hidden;
+	background-color: #2fc989;
+	transition: all 0.4s linear 0.1s;
+}
+
+.arrow-button:hover::before {
+	width: 100%;
+	visibility: visible;
+	transition: 0.5s linear;
+}
+
+.arrow-button:after {
+	content: "";
+	position: absolute;
+	top: 50%;
+	margin: -2px 0 0 0;
+	width: 140%;
+	height: 4px;
+	background-color: #2fc989;
+	transform: translate(-200%, 0);
+	visibility: hidden;
+	opacity: 0;
+	transition: 0.3s linear 0s;
+}
+
+.arrow-button:hover:after {
+	visibility: visible;
+	opacity: 1;
+	transform: translate(-72%, 0);
+	transition: 0.3s linear 0.2s;
+}

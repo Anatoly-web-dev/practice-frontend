@@ -1,0 +1,674 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Практика Frontend</title>
+	<link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,700;1,400&display=swap"
+		rel="stylesheet">
+	<link rel="stylesheet" href="./css/style.css">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
+</head>
+
+<body>
+	<div class="wrapper" id="home">
+
+		<header class="header lock-padding">
+			<div class="header__logo logo">
+				<div class="header__image logo__image">
+					<a href="index.html" title="Обновить">
+						<img src="./img/accordion.svg" alt="logo">
+					</a>
+				</div>
+				<h1 class="header__title logo__title">Практика Frontend</h1>
+			</div>
+			<div class="header__menu">
+				<div class="burger">
+					<span class="burger__item"></span>
+				</div>
+				<nav class="header__navigation">
+					<ul class="header__links">
+						<li class="header__item">
+							<a class="header__link anchor" href="#home">Главная</a>
+						</li>
+						<li class="header__item">
+							<a class="header__link anchor" href="#content">Как это сделать?</a>
+							<span class="arrow"></span>
+							<span class="points">...</span>
+							<ul class="header__sublist sublist">
+								<li class="sublist__item">
+									<a class="sublist__link anchor" href="#first_task">Аккардеон</a>
+								</li>
+								<li class="sublist__item">
+									<a class="sublist__link anchor" href="#second_task">Табы</a>
+								</li>
+								<li class="sublist__item">
+									<a class="sublist__link anchor" href="#third_task">Модальное окно</a>
+								</li>
+								<li class="sublist__item">
+									<a class="sublist__link anchor" href="#fourth_task">Выпадающее меню. Меню-бургер</a>
+								</li>
+								<li class="sublist__item">
+									<a class="sublist__link anchor" href="#fifth_task">Плавная прокрутка к разделу</a>
+								</li>
+								<li class="sublist__item">
+									<a class="sublist__link anchor" href="#sixth_task">Слайдер Swiper</a>
+								</li>
+								<li class="sublist__item">
+									<a class="sublist__link anchor" href="#seventh_task">Красивые кнопки</a>
+								</li>
+							</ul>
+						</li>
+						<li class="header__item">
+							<a class="header__link anchor" href="#contacts">Контакты</a>
+						</li>
+					</ul>
+				</nav>
+			</div>
+		</header>
+
+
+		<main class="page-content" id="content">
+			<h2 class="page__title">Как это сделать?</h2>
+
+			<article class="accordion" id="first_task">
+				<h3 class="accordion__title subtitle">Аккардеон (спойлер)</h3>
+				<section class="section">
+					<h3 class="section__title">HTML + Алгоритм</h3>
+					<div class="section__content none">
+						<div class="section__image">
+							<img src="./img/accordeon.webp" alt="method">
+						</div>
+						<div class="section__text">
+							<p>Аккардеон представляет собой секцию с заголовком и блоком с контентом под ним.</p>
+							<p>При клике на заголовок, открывается блок с контентом. При повторном клике на этот же заголовок,
+								блок закрывается.</p>
+							<p>По желанию можно добавить функционал: если кликнули на другой заголовок, открывается блок с
+								контентом под этим заголовком, ранее открытый блок с контентом закрывается.</p>
+						</div>
+					</div>
+				</section>
+				<section class="section">
+					<h3 class="section__title">CSS</h3>
+					<div class="section__content none">
+						<div class="section__image">
+							<img src="./img/accordeon.webp" alt="method">
+						</div>
+						<div class="section__text">
+							<ol class="section__list list">
+								<li class="list-item">Добавляем псевдоэлементы заголовку (+- или стрелочки или другое).
+									В зависимости от наличия класса 'active' показываем + или - или стрелка вверх или стрелка
+									вниз</li>
+								<li class="list-item">Изначально скрываем блок с контентом (height: 0; overflow: hidden)</li>
+								<li class="list-item">Для отображения блока с контентом указываем overflow: visible; height:
+									auto</li>
+								<li class="list-item">Показываем и скрываем блок с плавной анимацией</li>
+							</ol>
+						</div>
+					</div>
+				</section>
+				<section class="section">
+					<h3 class="section__title">JS</h3>
+					<div class="section__content none">
+						<div class="section__image">
+							<img src="./img/accordeon.webp" alt="method">
+						</div>
+						<div class="section__text">
+							<ol class="section__list list">
+								<li class="list-item">Получаем все элементы-заголовки в коллекцию.</li>
+								<li class="list-item">Перебираем эту коллекцию. Вешаем событие каждому элементу, при клике
+									добавляем или убираем класс 'show'.</li>
+								<li class="list-item">Если у заголовка есть класс 'show', то показываем изначально скрытый
+									блок с контентом под этим заголовком. Иначе скрываем этот блок.</li>
+							</ol>
+						</div>
+					</div>
+				</section>
+			</article>
+
+			<article class="tabs" id="second_task">
+				<h3 class="tabs__title subtitle">Табы (вкдадки)</h3>
+				<section class="tabs__body">
+					<nav class="tabs__links">
+						<a class="tabs__link" href="#tab_01"><span>Алгоритм</span></a>
+						<a class="tabs__link" href="#tab_02"><span>HTML</span></a>
+						<a class="tabs__link" href="#tab_03"><span>CSS</span></a>
+					</nav>
+					<div class="tabs__content">
+						<div class="tabs__section" id="tab_01">
+							<ol>
+								<li>В секцию с табами помещаем 2 блока:</li>
+								<ul>
+									<li> - блок с навигацией,</li>
+									<li> - блок с контентом под блоком с навигацией.</li>
+								</ul>
+								<li>Количество элементов навигации равно количеству блокам с контентом.</li>
+								<li>Каждая ссылка в таргете указываем id соответствующего блока.</li>
+								<li>Вкладки по умолчанию закрыты, чтобы их открыть нужно кликнуть по заголовку (ссылке).</li>
+							</ol>
+						</div>
+						<div class="tabs__section" id="tab_02">
+							<div class="tabs__image">
+								<img src="./img/screen-code-html.png" alt="code">
+							</div>
+						</div>
+						<div class="tabs__section" id="tab_03">
+							<ol>
+								<li>Контейнеру с навигацией задаем display: flex (у флекс элементов одинаковая ширина).</li>
+								<li>Тегам span у ссылок задаем z-index: 2</li>
+								<li>Блоки с контентом изначально скрываем (display: none), задаем position:relative</li>
+								<li>Относительно этих блоков абсолютно позиционируем псевдоэлементы.</li>
+								<li>Эти псевдоэлементы сдвигаем вверх на высоту блока с навигацией, задаем ширину как у
+									флекс-элемента в блоке навигации, высота равна высоте элемента в блоке навигации.</li>
+								<li>Первый элемент позиционируем слева, последний справа, центральный - сдвигаем слева на ширину
+									флекс-элемента блока навигации.</li>
+								<li>С помомощью псевдокласса target блокам с контентом задаем display block, чтобы он появился
+									при клике.</li>
+								<li>Псевдоэлементам задаем цвет фона, как у каждого блока с контентом по желанию.</li>
+								<li>Обязательно проверяем, как это будет смотреться на маленьких экранах, по необходимости
+									исправляем</li>
+								<li>Остальные стили на усмотрение</li>
+							</ol>
+						</div>
+					</div>
+				</section>
+			</article>
+
+			<article class="pop-ups" id="third_task">
+				<h3 class="pop-ups__title subtitle">Модальные окна (pop-up)</h3>
+				<div class="popups__buttons">
+					<a class="popup__btn" href="#pop-up-auth">Авторизация</a>
+					<a class="popup__btn" href="#pop-up-reg">Регистрация</a>
+				</div>
+				<section class="tabs__body">
+					<nav class="tabs__links">
+						<a class="tabs__link" href="#tab_1"><span>HTML</span></a>
+						<a class="tabs__link" href="#tab_2"><span>CSS</span></a>
+						<a class="tabs__link" href="#tab_3"><span>JS</span></a>
+					</nav>
+					<div class="tabs__content">
+						<div class="tabs__section" id="tab_1">
+							<p>При нажатии на ссылку открывается всплывающее окно, область страницы за ним
+								затемняется и пока оно не закрыто, мы не можем взаимодействовать с остальным контентом кроме
+								этого окна.
+							</p>
+							<br>
+							<ol>
+								<li>Нужно создать контейнер с модальным окном, добавить ему класс popup, по которому js будет
+									определять, что это модальное окно. Также добавляем уникальный id модальному окну.
+								</li>
+								<li>Нужно создать ссылку, при клике на которую будет открываться модальное окно. Добавляем
+									ссылке общий класс popup__link, с помощью которого js будет будет определять, что этот
+									элемент открывает модальное окно. Ее адрес - указанный для модального окна уникальный id.
+								</li>
+								<li>Создаем внутри модального окна контейнер, который выравнивает контент внутри себя как мы
+									укажем, в основном указывают по центру страницы</li>
+								<li>Добавляем в созданный ранее контейнер блок с контентом, добавляем ему общий класс
+									popup__content, как и у всех подобных блоков, которые находятся в модальных окнах</li>
+							</ol>
+						</div>
+						<div class="tabs__section" id="tab_2">
+							<ol>
+								<li>Позиционируем родительский блок с классом popup относительно окна браузера, задаем высоту и
+									ширину на весь экран, скрываем изначально этот блок, задаем полупрозрачный оверлэй, который
+									затемняет основной контент сайта за пределами всплывающего окна, добавляем плавности
+									анимации.</li>
+								<li>Для блока, который выравнивает контент модального окна по центру задаем соответствующие для
+									этого свойства.</li>
+								<li>При получении родительским блоком класса open, указывающим, что модальное окно открыто,
+									показываем изначально скрытый блок, добавляем плавности появления.</li>
+								<li>Элементам с классом popup__content задаем анимацию (можно через transform и transition), при
+									получении родительским элементом класса open, по которому мы определяем, что открыто
+									модальное окно.
+								</li>
+								<li>Тегу body по классу lock убираем скролл.</li>
+								<li>Остальные стили на усмотрение.</li>
+							</ol>
+						</div>
+						<div class="tabs__section tabs__section_big" id="tab_3">
+							<div class="tabs__image">
+								<img src="./img/screen-popup-code-js.png" alt="code">
+							</div>
+							<div class="tabs__image">
+								<img src="./img/screen-popup-code-js-2.png" alt="code">
+							</div>
+						</div>
+					</div>
+				</section>
+			</article>
+
+			<article class="drop-down-menu" id="fourth_task">
+				<h3 class="drop-down-menu__title subtitle">Выпадающее многоуровневое меню. Меню "бургер"</h3>
+				<section class="accordeon">
+					<h3 class="accordeon__title">HTML</h3>
+					<div class="accordeon__content">
+						<ol class="accordeon-list">
+							<li class="accordeon-list__item">В хэдере размещаем логотип и меню. В меню добавляем 2 дочерних
+								блока: иконку бургер и навигацию со списком ссылок. При клике на ссылку меню осуществляется
+								плавный переход к соответствующему разделу</li>
+							<li class="accordeon-list__item">Внутри блока навигации элементу списка с первым уровнем
+								вложенности помещаем вложенный список с пунктами подменю.</li>
+							<li class="accordeon-list__item">Добавляем к подменю еще 2 соседних элемента (теги span) с
+								определенными классами: треугольник-стрелочка и вертикально расположенные ... (три точки)</li>
+							<li class="accordeon-list__item">Хэдер имеет такую структуру:
+								<details>
+									<summary>Показать изображение</summary>
+									<div class="section__image">
+										<img src="./img/screen-code-html-2.png" alt="code">
+									</div>
+								</details>
+							</li>
+						</ol>
+					</div>
+				</section>
+				<section class="accordeon">
+					<h3 class="accordeon__title">CSS</h3>
+					<div class="accordeon__content">
+						<ol class="accordeon-list">
+							<li class="accordeon-list__item">Хэдеру задаем позиционирование относительно окна браузера, чтоб он
+								был всегда вверху окна, ширина - 100%, z-index больше всех элементов страницы, задаем
+								минимальную высоту, выстраиваем контент хэдера (логотип и меню) в колонки по горизонтали,
+								элементы хэдера раскидываем по краям и задаем им максимальную ширину, выравниваем элементы
+								хэдера по центру вертикально</li>
+							<li class="accordeon-list__item">Логотипу задаем z-index больше, чем у навигации</li>
+							<li class="accordeon-list__item">Меню бургер представляет из себя тег span с двумя
+								псевдоэлементами, позиционированными снизу и сверху, относительно span. Меню-бургер изначально
+								скрываем, задаем ему z-index меньше хэдера и логотипа</li>
+							<li class="accordeon-list__item">Если меню бургер имеет статус (класс) активный, т.е. мы нажали на
+								него, превращаем 3 полоски в крестик, скрывая полоску посередине и переворачивая псевдоэлементы
+								под нужным углом</li>
+							<li class="accordeon-list__item">Элементам списка с первым уровнем вложенности задаем position:
+								relative, отступ сверху и снизу 10px, а также чуть больший шрифт</li>
+							<li class="accordeon-list__item">Изначально скрываем стрелочку, открывающую подменю, а показываем
+								три вертикальные точки ..., которые указывают что есть подменю</li>
+							<li class="accordeon-list__item">Остальные стили, такие как отступы, переходы, размер шрифта и т.д.
+								указываем на свое усмотрение</li>
+							<li class="accordeon-list__item">Медиазапросы для устройств с разрешением выше 768px
+								<ol class="accordeon-list">
+									<li class="accordeon-list__item">Выстраиваем элементы списка в колонки, задаем колонкам
+										разрыв
+									</li>
+									<li class="accordeon-list__item">Список подменю позиционируем абсолютно элемента списка с
+										первым уровнем вложенности, так чтобы он был под ним. Задаем списку (подменю) внутренние
+										отстуры со всех сторон, минимальную ширину, цвет фона отличабщийся от остального контента,
+										скрываем список (opacity + visibility), сдвигаем на 10% вверх, запрещаем события, задаем
+										переходы.</li>
+									<li class="accordeon-list__item">При наведении на элемент списка с первым уровнем вложенности
+										вложенный список (подменю) меняет свойства: элементы списка подменю выстраиваются в
+										колонки, показывается список подменю (opacity + visibility), сдвигается на изначальную
+										позицию, разрешаются все события для вложенного списка (подменю).</li>
+								</ol>
+							</li>
+							<li class="accordeon-list__item">Медиазапросы для устройств с разрешением меньше 767px
+								<ol class="accordeon-list">
+									<li class="accordeon-list__item">Отображаем ранее скрытое меню-бургер.</li>
+									<li class="accordeon-list__item">Всю навигацию позиционируем относительно окна браузера,
+										прячем влево на 100%, задаем ширину и высоту 100%, задаем полупрозрачный цвет фона, задаем
+										отступ сверху на высоту хэдера + еще немного, остальные оступы на усмотрение, если контент
+										меню не помещается на экране нужно дать возможность скроллить меню, также задаем переход
+										для появления меню для свойства left(выезжает плавно слева)</li>
+									<li class="accordeon-list__item">Чтобы меню не перекрывало контент хэдера, создаем
+										псевдоэлемент для навигации, позиционируем его относительно окна браузера сверху, задаем
+										ему ширину 100%, а высоту равную высоте хэдера, задаем z-index меньше, чем у элементов
+										хэдера, задаем цвет фона непрозрачный</li>
+									<li class="accordeon-list__item">Когда навигация получает статус (класс) 'активный', при
+										нажатии на меню-бургер, сдвигается навигация на изначальную позицию (выезжает плавно
+										слева)</li>
+									<li class="accordeon-list__item">Элементам списка с первым уровнем вложенности задаем
+										display: flex и выстраиваем в колонки по вертикали, чтобы ссылка, находящаяся внутри него
+										занимала 100% ширины</li>
+									<li class="accordeon-list__item">Изначально скрываем вложенный список (подменю) (opacity +
+										visibility), максимальная ширина равна 0, немного смещаем вверх, задаем плавный переход
+									</li>
+									<li class="accordeon-list__item">Когда элемент списка с первым уровнем вложенности получает
+										статус (класс) 'активный', отображаем список подменю (opacity + visibility), задаем
+										максимальную высоту 100%, отступы сверху и по бокам, возвращаем на изначальную позицию,
+										задаем плавный переход для всех свойств кроме внутреннего отступа слева, чтобы не съезжал
+									</li>
+									<li class="accordeon-list__item">Убираем три вертикальные точки (display)</li>
+									<li class="accordeon-list__item">Отображаем стрелочку (треугольник) (рисуем с помощью
+										border'ов), позиционируем абсолютно с небольшим смещением сверху и справа, при наведении
+										на него отображается курсор, задаем плавный переход</li>
+									<li class="accordeon-list__item">Когда стрелочка (треугольник) получает статус (класс)
+										'активный', переворачиваем его основанием вниз, задаем плавный переход</li>
+								</ol>
+							</li>
+						</ol>
+					</div>
+				</section>
+				<section class="accordeon">
+					<h3 class="accordeon__title">JS</h3>
+					<div class="accordeon__content">
+						<ol class="accordeon-list">
+							<li class="accordeon-list__item">При клике на элементы-стрелочки (треугольники) будет открываться
+								подменю. Получаем в коллекцию все элементы-стрелочки (треугольники). Если
+								такие элементы существуют, перебираем коллекцию, каждому элементу коллекции вешаем событие, при
+								клике у родительского элемента добавляется / удаляется статус (класс) 'активный'</li>
+							<li class="accordeon-list__item">При клике на иконку бургер-меню, она меняется на крестик, и плавно
+								появляется скрытое меню. А при клике на крестик, появляется иконка меню-бургер и закрывается
+								плавно меню. Получаем в константы бургер-меню и навигацию со списком ссылок.При клике на иконку
+								бургер-меню, если такая существует, добавляем / удаляем статус (класс) 'активный' у самой
+								иконки-бургер и у элемента меню-навигации. Если бургер-меню имеет статус (класс) 'активный', то
+								убираем скролл у тега body, а иначе добавляем скролл тегу body.
+							</li>
+							<li class="accordeon-list__item">При клике на ссылку меню или подменю, закрывается меню и
+								скролл прокручивается к выбранному разделу. Получаем в коллекцию все ссылки меню и подменю. Если
+								такие элементы существуют, перебираем коллекцию, каждому элементу назначаем событие, при клике
+								убираем статус (класс) 'активный' у меню-бургера и навигации, а также добавляем скролл тегу
+								body.
+							</li>
+						</ol>
+					</div>
+				</section>
+			</article>
+
+			<article class="smoothScrolling" id="fifth_task">
+				<h3 class="smoothScrolling__title subtitle">Плавная прокрутка к разделу</h3>
+				<section class="accordeon">
+					<h3 class="accordeon__title">HTML</h3>
+					<div class="accordeon__content">
+						<ol class="accordeon-list">
+							<li class="accordeon-list__item">При нажатии на ссылку или кнопку, экран прокуручивается к
+								указанному в адресе ссылки элементу</li>
+							<li class="accordeon-list__item">Добавляем ссылке в атрибут href: id секции (блока), всем таким
+								ссылкам задаем одинаковый класс</li>
+							<li class="accordeon-list__item">Указываем блокам, на который ведут ссылки уникальный id</li>
+						</ol>
+					</div>
+				</section>
+				<section class="accordeon">
+					<h3 class="accordeon__title">CSS</h3>
+					<div class="accordeon__content">
+						<p>На свое усмотрение</p>
+					</div>
+				</section>
+				<section class="accordeon">
+					<h3 class="accordeon__title">JS</h3>
+					<div class="accordeon__content">
+						<ol class="accordeon-list">
+							<li class="accordeon-list__item">Получаем в коллекцию все ссылки, которые будут плавно прокручивать
+								к указанному в атрибуте href id секции (блока)</li>
+							<li class="accordeon-list__item">Получаем высоту header'a, если для него задана позиционирование
+								относительно окна браузера</li>
+							<li class="accordeon-list__item">Если такие ссылки существуют, то перебираем коллекцию</li>
+							<li class="accordeon-list__item">Каждому элементу, при клике на него, убираем поведение по
+								умолчанию</li>
+							<li class="accordeon-list__item">Получаем в переменную адрес (id), на который указывает ссылка, при
+								нажатии на определенную ссылку, значение этой переменной меняется. Если такие ссылки существуют,
+							</li>
+							<li class="accordeon-list__item">
+								Получаем в переменную значение, на которое нужно прокрутить скролл окна браузера, так чтобы
+								указанный в адресе ссылки блок (секция) находились ниже хэдера при прокрутке. Для этого нужно
+								воспользоваться формулой: linkTarget.getBoundingClientRect().top + scrollY - headerHeight;
+							</li>
+							<li class="accordeon-list__item">
+								Прокручиваем плавно (smooth) скролл, на вычесленное выше значение. window.scrollTo({ top:
+								scrollValue, behavior: "smooth" });
+							</li>
+						</ol>
+					</div>
+				</section>
+			</article>
+
+			<article class="slider" id="sixth_task">
+				<h3 class="slider__title subtitle">Слайдер Swiper</h3>
+				<!-- Главный контейнер слайдера -->
+				<div class="gallery swiper-container">
+					<!-- Обязательная оболочка -->
+					<div class="gallery__wrapper swiper-wrapper">
+						<!-- Слайд -->
+						<div class="gallery__slide swiper-slide">
+							<!-- Контент внутри слайда -->
+							<h3 class="gallery__title">Слайд 1</h3>
+							<div class="gallery__image swiper-zoom-container">
+								<img srcset="./img/image-1.jpg" src="./img/1x1.png" loading="lazy" alt="photo">
+								<div class="swiper-lazy-preloader"></div>
+							</div>
+						</div>
+						<!-- Слайд -->
+						<div class="gallery__slide swiper-slide">
+							<!-- Контент внутри слайда -->
+							<h3 class="gallery__title">Слайд 2</h3>
+							<div class="gallery__image swiper-zoom-container">
+								<img srcset="./img/image-2.jpg" src="./img/1x1.png" loading="lazy" alt="photo">
+								<div class="swiper-lazy-preloader"></div>
+							</div>
+						</div>
+						<!-- Слайд -->
+						<div class="gallery__slide swiper-slide">
+							<!-- Контент внутри слайда -->
+							<h3 class="gallery__title">Слайд 3</h3>
+							<div class="gallery__image swiper-zoom-container">
+								<img srcset="./img/image-3.jpg" src="./img/1x1.png" loading="lazy" alt="photo">
+								<div class="swiper-lazy-preloader"></div>
+							</div>
+						</div>
+						<!-- Слайд -->
+						<div class="gallery__slide swiper-slide">
+							<!-- Контент внутри слайда -->
+							<h3 class="gallery__title">Слайд 4</h3>
+							<div class="gallery__image swiper-zoom-container">
+								<img srcset="./img/image-4.jpg" src="./img/1x1.png" loading="lazy" alt="photo">
+								<div class="swiper-lazy-preloader"></div>
+							</div>
+						</div>
+						<!-- Слайд -->
+						<div class="gallery__slide swiper-slide">
+							<!-- Контент внутри слайда -->
+							<h3 class="gallery__title">Слайд 5</h3>
+							<div class="gallery__image swiper-zoom-container">
+								<img srcset="./img/image-5.jpg" src="./img/1x1.png" loading="lazy" alt="photo">
+								<div class="swiper-lazy-preloader"></div>
+							</div>
+						</div>
+						<!-- и т.д. -->
+						<!-- Слайд -->
+						<div class="gallery__slide swiper-slide">
+							<!-- Контент внутри слайда -->
+							<h3 class="gallery__title">Слайд 1</h3>
+							<div class="gallery__image swiper-zoom-container">
+								<img srcset="./img/image-1.jpg" src="./img/1x1.png" loading="lazy" alt="photo">
+								<div class="swiper-lazy-preloader"></div>
+							</div>
+						</div>
+						<!-- Слайд -->
+						<div class="gallery__slide swiper-slide">
+							<!-- Контент внутри слайда -->
+							<h3 class="gallery__title">Слайд 2</h3>
+							<div class="gallery__image swiper-zoom-container">
+								<img srcset="./img/image-2.jpg" src="./img/1x1.png" loading="lazy" alt="photo">
+								<div class="swiper-lazy-preloader"></div>
+							</div>
+						</div>
+						<!-- Слайд -->
+						<div class="gallery__slide swiper-slide">
+							<!-- Контент внутри слайда -->
+							<h3 class="gallery__title">Слайд 3</h3>
+							<div class="gallery__image swiper-zoom-container">
+								<img srcset="./img/image-3.jpg" src="./img/1x1.png" loading="lazy" alt="photo">
+								<div class="swiper-lazy-preloader"></div>
+							</div>
+						</div>
+						<!-- Слайд -->
+						<div class="gallery__slide swiper-slide">
+							<!-- Контент внутри слайда -->
+							<h3 class="gallery__title">Слайд 4</h3>
+							<div class="gallery__image swiper-zoom-container">
+								<img srcset="./img/image-4.jpg" src="./img/1x1.png" loading="lazy" alt="photo">
+								<div class="swiper-lazy-preloader"></div>
+							</div>
+						</div>
+						<!-- Слайд -->
+						<div class="gallery__slide swiper-slide">
+							<!-- Контент внутри слайда -->
+							<h3 class="gallery__title">Слайд 5</h3>
+							<div class="gallery__image swiper-zoom-container">
+								<img srcset="./img/image-5.jpg" src="./img/1x1.png" loading="lazy" alt="photo">
+								<div class="swiper-lazy-preloader"></div>
+							</div>
+						</div>
+						<!-- и т.д. -->
+					</div>
+					<!-- Добавляем, если нужны стрелки управления -->
+					<div class="swiper-button-prev"></div>
+					<div class="swiper-button-next"></div>
+					<!-- Добавляем, если нужна пагинация -->
+					<div class="swiper-pagination"></div>
+					<!-- Добавляем, если нужна полоса прокрутки -->
+					<div class="swiper-scrollbar"></div>
+				</div>
+			</article>
+
+			<article class="beauty-buttons" id="seventh_task">
+				<h3 class="beauty-buttons__title subtitle">Красивые кнопки</h3>
+				<section class="beauty-buttons__content">
+					<div class="beauty-buttons__wrapper">
+						<a class="beauty-buttons__btn btn-wave" href="#">
+							<span class="btn-wave__text">Выполнить</span>
+							<span class="btn-wave__waves"></span>
+						</a>
+					</div>
+					<div class="beauty-buttons__wrapper">
+						<a href="#" class="gradient-button">Выполнить</a>
+					</div>
+					<div class="beauty-buttons__wrapper wrapper_black">
+						<a href="#" class="border-button">Перейти
+							<span class="border-button__pseudo"></span>
+						</a>
+					</div>
+					<div class="beauty-buttons__wrapper">
+						<a href="#" class="sliding-button">
+							<span class="sliding-button__text">Подтвердить</span>
+						</a>
+					</div>
+					<div class="beauty-buttons__wrapper">
+						<a href="#" class="glow-button">Подробнее</a>
+					</div>
+					<div class="beauty-buttons__wrapper btn-wrapper">
+						<a href="#" class="arrow-button">
+							<span class="arrow-button__text">Отправить</span>
+						</a>
+					</div>
+				</section>
+			</article>
+
+		</main>
+
+		<footer class="footer" id="contacts">
+			<section class="contacts">
+				<div class="contacts__logo logo">
+					<div class="contacts__image logo__image">
+						<img src="./img/accordion.svg" alt="logo">
+					</div>
+					<h3 class="contacts__title logo__title">Практика Frontend</h3>
+				</div>
+				<nav class="contacts__menu">
+					<ul class="contacts__links">
+						<li class="contact__item">
+							<a class="contact__link" href="#">
+								<img src="./img/vk.svg" alt="vk">
+							</a>
+						</li>
+						<li class="contact__item">
+							<a class="contact__link" href="#">
+								<img src="./img/instagram.svg" alt="instagram">
+							</a>
+						</li>
+						<li class="contact__item">
+							<a class="contact__link" href="#">
+								<img src="./img/telegram.svg" alt="telegram">
+							</a>
+						</li>
+						<li class="contact__item">
+							<a class="contact__link" href="#">
+								<img src="./img/github.svg" alt="github">
+							</a>
+						</li>
+					</ul>
+				</nav>
+				<div class="contacts__text">
+					<p>&#169; Практика Frontend, 2023</p>
+				</div>
+			</section>
+		</footer>
+
+		<div class="pop-up" id="pop-up-auth">
+			<div class="pop-up__content">
+				<form class="autorization-form form" action="functions.php" method="post">
+					<fieldset class="form__border">
+						<div class="autorization__btn-close form__btn-close">
+							<img class="close" src="./img/close.png" alt="X">
+						</div>
+						<legend class="form__title">Авторизация</legend>
+						<div class="form__row">
+							<label class="form__field-name" for="login">Логин</label>
+							<input class="form__field" type="text" name="login" id="login" placeholder="Ваш логин?">
+						</div>
+						<div class="form__row">
+							<label class="form__field-name" for="password">Пароль</label>
+							<input class="form__field" type="password" name="password" id="password" placeholder="Ваш пароль?">
+						</div>
+						<div class="form__buttons">
+							<button type="submit" class="form__btn form__btn_confirm close">Подтвердить</button>
+							<button type="submit" class="form__btn form__btn_reset close">Отмена</button>
+						</div>
+						<div class="form__footer">
+							<p>Нет аккаунта?</p>
+							<a class="popup__btn" href="#pop-up-reg">Зарегистрируйтесь</a>
+						</div>
+					</fieldset>
+				</form>
+			</div>
+		</div>
+
+		<div class="pop-up" id="pop-up-reg">
+			<div class="pop-up__content">
+				<form class="registration-form form" action="functions.php" method="post">
+					<fieldset class="form__border">
+						<div class="registration__btn-close form__btn-close">
+							<img class="close" src="./img/close.png" alt="X">
+						</div>
+						<legend class="form__title">Регистрация</legend>
+						<div class="form__row">
+							<label class="form__field-name" for="new-user-name">Имя</label>
+							<input class="form__field" type="text" name="new-user-name" id="new-user-name"
+								placeholder="Укажите ФИО">
+						</div>
+						<div class="form__row">
+							<label class="form__field-name" for="new-user-login">Логин</label>
+							<input class="form__field" type="text" name="new-user-login" id="new-user-login"
+								placeholder="Укажите логин">
+						</div>
+						<div class="form__row">
+							<label class="form__field-name" for="new-user-password">Пароль</label>
+							<input class="form__field" type="password" name="new-user-password" id="new-user-password"
+								placeholder="Придумайте пароль от 8 символов">
+						</div>
+						<div class="form__row">
+							<label class="form__field-name" for="password-replay">Подтвердите пароль</label>
+							<input class="form__field" type="password" name="password-replay" id="password-replay"
+								placeholder="Пароли должны совпадать">
+						</div>
+						<div class="form__buttons">
+							<button type="submit" class="form__btn form__btn_confirm close">Подтвердить</button>
+							<button type="submit" class="form__btn form__btn_reset close">Отмена</button>
+						</div>
+						<div class="form__footer">
+							<p>Есть аккаунт?</p>
+							<a class="popup__btn" href="#pop-up-auth">Авторизуйтесь</a>
+						</div>
+					</fieldset>
+				</form>
+			</div>
+		</div>
+
+	</div>
+	<script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+	<script src="./js/script.js"></script>
+</body>
+
+</html>

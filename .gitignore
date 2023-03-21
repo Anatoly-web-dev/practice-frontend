@@ -1,0 +1,8 @@
+.source
+.vscode
+.idea
+*.suo
+*.nvts*
+*.njsproj
+*.sln
+*.sw?
